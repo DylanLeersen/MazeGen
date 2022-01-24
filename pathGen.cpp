@@ -333,7 +333,7 @@ void genMaze(){
     //vars
         int row = size - 1 ,col = size/2;
         maze[row][col] = '0';
-        int endRow = 0, endCol = 10;
+        int endRow = 0, endCol = size /2;
         maze[endRow][endCol] = 'E';
         bool isUp;
         bool isDown;
