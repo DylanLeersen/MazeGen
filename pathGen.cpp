@@ -1,5 +1,5 @@
 #include "maze.hpp"
-#define size 20
+extern int size;
 
 enum direction{
 up, down, left, right
