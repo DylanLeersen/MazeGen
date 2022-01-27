@@ -327,8 +327,9 @@ void checkPossible(int row, int col, bool & isUp, bool & isDown, bool & isLeft, 
 }
 
 void genMaze(){
+    int seed = time(0);
     error = false;
-    srand(time(0));
+    srand(seed);
     mazeToHashtag();
     //vars
         int row = size - 1 ,col = size/2;
@@ -343,7 +344,7 @@ void genMaze(){
     
     while(!winCheck(row, col, endRow, endCol)){
         if(error){
-            srand(time(0));
+            srand(++seed);
             mazeToHashtag();
             row = size - 1; 
             col = size/2;
