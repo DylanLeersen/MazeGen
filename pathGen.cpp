@@ -1,5 +1,5 @@
 #include "maze.hpp"
-#define size 20
+extern int size;
 
 enum direction{
 up, down, left, right
@@ -327,13 +327,14 @@ void checkPossible(int row, int col, bool & isUp, bool & isDown, bool & isLeft, 
 }
 
 void genMaze(){
+    int seed = time(0);
     error = false;
-    srand(time(0));
+    srand(seed);
     mazeToHashtag();
     //vars
         int row = size - 1 ,col = size/2;
         maze[row][col] = '0';
-        int endRow = 0, endCol = 10;
+        int endRow = 0, endCol = size /2;
         maze[endRow][endCol] = 'E';
         bool isUp;
         bool isDown;
@@ -343,7 +344,7 @@ void genMaze(){
     
     while(!winCheck(row, col, endRow, endCol)){
         if(error){
-            srand(time(0));
+            srand(++seed);
             mazeToHashtag();
             row = size - 1; 
             col = size/2;

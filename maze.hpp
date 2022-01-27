@@ -3,3 +3,5 @@
 #include <ostream>
 
 extern void genMaze();
+
+extern int size;
